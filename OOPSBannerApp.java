@@ -1,27 +1,26 @@
 /**
  * OOPSBannerApp
- * UC4: Banner using String Array and Loop
+ * UC5: Banner using Inline Array Initialization
  * 
  * @author Megha
- * @version 4.0
+ * @version 5.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        // Step 1: Create array to store banner lines
-        String[] banner = new String[7];
+        // Inline array initialization with String.join()
+        String[] banner = {
+            String.join(" ", "********", "  ", "********", "  ", "********", "  ", "********"),
+            String.join(" ", "*      *", "  ", "*      *", "  ", "*      *", "  ", "*       "),
+            String.join(" ", "*      *", "  ", "*      *", "  ", "*      *", "  ", "*       "),
+            String.join(" ", "*      *", "  ", "*      *", "  ", "********", "  ", "********"),
+            String.join(" ", "*      *", "  ", "*      *", "  ", "*       ", "  ", "*       "),
+            String.join(" ", "*      *", "  ", "*      *", "  ", "*       ", "  ", "*       "),
+            String.join(" ", "********", "  ", "********", "  ", "*       ", "  ", "********")
+        };
 
-        // Step 2: Fill array using String.join()
-        banner[0] = String.join(" ", "********", "  ", "********", "  ", "********", "  ", "********");
-        banner[1] = String.join(" ", "*      *", "  ", "*      *", "  ", "*      *", "  ", "*       ");
-        banner[2] = String.join(" ", "*      *", "  ", "*      *", "  ", "*      *", "  ", "*       ");
-        banner[3] = String.join(" ", "*      *", "  ", "*      *", "  ", "********", "  ", "********");
-        banner[4] = String.join(" ", "*      *", "  ", "*      *", "  ", "*       ", "  ", "*       ");
-        banner[5] = String.join(" ", "*      *", "  ", "*      *", "  ", "*       ", "  ", "*       ");
-        banner[6] = String.join(" ", "********", "  ", "********", "  ", "*       ", "  ", "********");
-
-        // Step 3: Print using loop (NO repetition)
+        // Loop to print banner
         for (String line : banner) {
             System.out.println(line);
         }
