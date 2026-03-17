@@ -1,28 +1,67 @@
 /**
  * OOPSBannerApp
- * UC5: Banner using Inline Array Initialization
+ * UC6: Banner using Methods (Modular Design)
  * 
  * @author Megha
- * @version 5.0
+ * @version 6.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        // Inline array initialization with String.join()
-        String[] banner = {
-            String.join(" ", "********", "  ", "********", "  ", "********", "  ", "********"),
-            String.join(" ", "*      *", "  ", "*      *", "  ", "*      *", "  ", "*       "),
-            String.join(" ", "*      *", "  ", "*      *", "  ", "*      *", "  ", "*       "),
-            String.join(" ", "*      *", "  ", "*      *", "  ", "********", "  ", "********"),
-            String.join(" ", "*      *", "  ", "*      *", "  ", "*       ", "  ", "*       "),
-            String.join(" ", "*      *", "  ", "*      *", "  ", "*       ", "  ", "*       "),
-            String.join(" ", "********", "  ", "********", "  ", "*       ", "  ", "********")
-        };
+        String[] o = getOPattern();
+        String[] p = getPPattern();
+        String[] s = getSPattern();
 
-        // Loop to print banner
+        // Combine all letters line by line
+        String[] banner = new String[7];
+
+        for (int i = 0; i < 7; i++) {
+            banner[i] = String.join("   ", o[i], o[i], p[i], s[i]);
+        }
+
+        // Print banner
         for (String line : banner) {
             System.out.println(line);
         }
+    }
+
+    // Method for O
+    public static String[] getOPattern() {
+        return new String[]{
+            "********",
+            "*      *",
+            "*      *",
+            "*      *",
+            "*      *",
+            "*      *",
+            "********"
+        };
+    }
+
+    // Method for P
+    public static String[] getPPattern() {
+        return new String[]{
+            "********",
+            "*      *",
+            "*      *",
+            "********",
+            "*       ",
+            "*       ",
+            "*       "
+        };
+    }
+
+    // Method for S
+    public static String[] getSPattern() {
+        return new String[]{
+            "********",
+            "*       ",
+            "*       ",
+            "********",
+            "       *",
+            "       *",
+            "********"
+        };
     }
 }
